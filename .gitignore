@@ -1,3 +1,10 @@
 .DS_Store
 Thumbs.db
 .vscode/
+
+# Files the scripts generate
+data.json
+errors*.txt
+pokemon_data/
+pokemon_data_parallel/
+pokemon_report.csv

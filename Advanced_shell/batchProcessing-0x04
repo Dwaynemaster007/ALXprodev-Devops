@@ -1,4 +1,5 @@
 #!/bin/bash
+# Fetch several Pokémon in parallel background jobs, killing any that run too long
 
 POKEMONS=("bulbasaur" "ivysaur" "venusaur" "charmander" "charmeleon")
 OUTPUT_DIR="pokemon_data_parallel"
@@ -41,4 +42,5 @@ for pid in "${PIDS[@]}"; do
     done
 done
 
+wait 2>/dev/null
 echo "All parallel fetches complete!"

@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Read data.json (created by apiAutomation-0x00) and print a one-line summary
+if [ ! -f data.json ]; then
+    echo "Error: data.json not found. Run ./apiAutomation-0x00 first." >&2
+    exit 1
+fi
+
 # Extract values from JSON
 name=$(jq -r '.name' data.json | sed 's/.*/\u&/')
 type=$(jq -r '.types[0].type.name' data.json | sed 's/.*/\u&/')
