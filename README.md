@@ -52,14 +52,21 @@ The project is structured as a progressive series of scripts, each building on t
 
 ## 🚀 Usage
 
-All files are shell scripts and should be run directly from the terminal after setting the executable permission:
+The scripts need `bash`, `curl` and `jq` (`sudo apt install jq`). They are already executable, so run them from `Advanced_shell/` in this order, because each one uses the files the previous one wrote:
 
 ```bash
-# Make a script executable
-chmod +x <script-name>
+cd Advanced_shell
+./apiAutomation-0x00               # Pikachu -> data.json (failures go to errors.txt)
+./data_extraction_automation-0x01  # "Pikachu is of type Electric, weighs 6kg, and is 0.4m tall."
+./batchProcessing-0x02             # 5 Pokémon -> pokemon_data/, with 3 retries each
+./summaryData-0x03                 # pokemon_data/ -> pokemon_report.csv + average height and weight
+./batchProcessing-0x04             # the same 5 Pokémon fetched in parallel -> pokemon_data_parallel/
+```
 
-# Execute a script (e.g., Task 0)
-./apiAutomation-0x00
+## 👤 Author
 
-# Execute the final parallel fetching script
-./batchProcessing-0x04
+**Thubelihle Dlamini**, [GitHub](https://github.com/Dwaynemaster007) · [LinkedIn](https://linkedin.com/in/thubelihledlamini)
+
+## 📄 License
+
+[MIT](LICENSE)
